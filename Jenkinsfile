@@ -11,5 +11,16 @@ pipeline {
                 sh 'pytest test_hello.py'
             }
         }
+        stage('Generate Docker Image') {
+            steps {
+                sh 'docker build -t hello-world .'
+            }
+        }
+        stage('Run Docker Image') {
+            steps {
+                sh 'docker run --rm hello-world'
+            }
+        }
+
     }
 }
