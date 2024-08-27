@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Run Docker Image') {
             steps {
-                sh 'docker run --rm hello-world'
+                sh 'docker run hello-world'
             }
         }
 
